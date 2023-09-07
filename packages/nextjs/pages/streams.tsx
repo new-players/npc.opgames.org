@@ -54,12 +54,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Your Hacker House</title>
+        <title>New Players Cooperative | Streams</title>
         <meta
           name="description"
           content="We're running an experiment to retroactively fund open-source work by providing a monthly UBI to handpicked open-source developers, and rewarding them for their ongoing contributions to the ecosystem."
         />
-        <meta property="og:title" content="Your Hacker House" />
+        <meta property="og:title" content="New Players Cooperative" />
         <meta
           property="og:description"
           content="We're running an experiment to retroactively fund open-source work by providing a monthly UBI to handpicked open-source developers, and rewarding them for their ongoing contributions to the ecosystem."
@@ -73,12 +73,12 @@ const Home: NextPage = () => {
         <div className="max-w-[42rem] m-auto w-[90%] bg-secondary px-8 py-4 rounded-2xl">
           <p className="font-bold text-left text-4xl leading-6 py-2">Welcome!</p>
           <p>
-            This forkable project aims to provide a platform to retroactively fund open-source work by providing a
-            monthly UBI to handpicked open-source developers, rewarding them for their ongoing contributions.
+            We are a group of builders, artists and dreamers using <strong>ERC-6551 and AI</strong>. Our mission is to
+            build a better world with the new players in the game of life.
           </p>
           <p>
-            Developers can submit their contributions (stored in a Smart Contract), automatically claim grant streams,
-            and showcase their work to the public.
+            This forkable project aims to provide a platform to retroactively fund open-source work by providing a
+            monthly UBI to handpicked open-source developers, rewarding them for their ongoing contributions.
           </p>
         </div>
 
