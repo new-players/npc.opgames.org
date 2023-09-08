@@ -66,12 +66,14 @@ export const Header = () => {
         </NavLink>
       </li>
   */}
-      <li>
-        <NavLink href="/blockexplorer">
-          <MagnifyingGlassIcon className="h-4 w-4" />
-          Block Explorer
-        </NavLink>
-      </li>
+      {process.env.NEXT_PUBLIC_VERCEL_ENV ?? (
+        <li>
+          <NavLink href="/blockexplorer">
+            <MagnifyingGlassIcon className="h-4 w-4" />
+            Block Explorer
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
