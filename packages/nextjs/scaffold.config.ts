@@ -11,7 +11,12 @@ export type ScaffoldConfig = {
 
 const scaffoldConfig = {
   // The network where your DApp lives in
-  targetNetwork: chains.hardhat,
+  targetNetwork:
+    process.env.NEXT_PUBLIC_VERCEL_ENV === "development" || process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
+      ? chains.goerli
+      : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+      ? chains.goerli
+      : chains.hardhat,
 
   // The interval at which your front-end polls the RPC servers for new data
   // it has no effect on the local network
