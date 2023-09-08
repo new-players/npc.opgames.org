@@ -32,30 +32,32 @@ export const Footer = () => {
         <ul className="menu menu-horizontal w-full">
           <div className="flex justify-center items-center gap-2 text-sm w-full">
             <div className="text-center">
+              Built with{" "}
               <a
                 href="https://github.com/scaffold-eth/se-2"
                 target="_blank"
                 rel="noreferrer"
                 className="underline underline-offset-2"
               >
-                Fork me
+                Scaffold-Eth 2.0
               </a>
             </div>
             <span>·</span>
             <div>
               <p className="m-0 text-center">
-                Built with <HeartIcon className="inline-block h-4 w-4" /> at 🏰{" "}
+                Supported <HeartIcon className="inline-block h-4 w-4" /> by{" "}
                 <a
-                  href="https://buidlguidl.com/"
+                  href="https://opgames.org/"
                   target="_blank"
                   rel="noreferrer"
                   className="underline underline-offset-2"
                 >
-                  BuidlGuidl
+                  OP Games
                 </a>
               </p>
             </div>
             <span>·</span>
+            {/*
             <div className="text-center">
               <a
                 href="https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA"
@@ -66,6 +68,7 @@ export const Footer = () => {
                 Support
               </a>
             </div>
+            */}
           </div>
         </ul>
       </div>
