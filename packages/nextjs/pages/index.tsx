@@ -18,12 +18,6 @@ const Home: NextPage = () => {
             <span className="block text-2xl mb-2">Welcome to the</span>
             <span className="block text-4xl font-bold">New Players Cooperative</span>
           </h1>
-          <iframe
-            src="https://drive.google.com/file/d/1AlIeO6PrUPa2orDKpQlO4edmWl6l_nVV/preview"
-            width="640"
-            height="480"
-            allow="autoplay"
-          ></iframe>
           {/*
           <p className="text-center text-lg">
             Get started by editing{" "}
@@ -42,6 +36,15 @@ const Home: NextPage = () => {
             </code>
           </p>
           */}
+        </div>
+
+        <div className="flex-grow w-full mt-8 px-8">
+          <iframe
+            src="https://drive.google.com/file/d/1AlIeO6PrUPa2orDKpQlO4edmWl6l_nVV/preview"
+            width="100%"
+            height="480px"
+            allow="autoplay"
+          ></iframe>
         </div>
 
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
