@@ -50,6 +50,12 @@ export const Header = () => {
       </li>
   */}
       <li>
+        <NavLink href="/roadmap">
+          <MapIcon className="h-4 w-4" />
+          Roadmap
+        </NavLink>
+      </li>
+      <li>
         <NavLink href="/streams">
           <RssIcon className="h-4 w-4" />
           Streams
@@ -62,18 +68,11 @@ export const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink href="/players">
+        <NavLink href="/Discuss">
           <ChatBubbleOvalLeftEllipsisIcon className="h-4 w-4" />
-          Players
+          Discuss
         </NavLink>
       </li>
-      <li>
-        <NavLink href="/roadmap">
-          <MapIcon className="h-4 w-4" />
-          Roadmap
-        </NavLink>
-      </li>
-
       {/*
       <li>
         <NavLink href="/example-ui">
