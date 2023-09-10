@@ -6,6 +6,7 @@ import {
   Bars3Icon,
   BugAntIcon,
   ChatBubbleOvalLeftEllipsisIcon,
+  HeartIcon,
   MagnifyingGlassIcon,
   MapIcon,
   PuzzlePieceIcon, // SparklesIcon
@@ -68,11 +69,18 @@ export const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink href="/Discuss">
+        <NavLink href="/discussion">
           <ChatBubbleOvalLeftEllipsisIcon className="h-4 w-4" />
-          Discuss
+          Discussion
         </NavLink>
       </li>
+      <li>
+        <NavLink href="/supporters">
+          <HeartIcon className="h-4 w-4" />
+          Supporters
+        </NavLink>
+      </li>
+
       {/*
       <li>
         <NavLink href="/example-ui">

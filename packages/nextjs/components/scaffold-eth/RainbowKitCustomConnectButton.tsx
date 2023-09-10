@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { QRCodeSVG } from "qrcode.react";
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -11,6 +12,7 @@ import {
   ChevronDownIcon,
   DocumentDuplicateIcon,
   QrCodeIcon,
+  UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { Address, Balance, BlockieAvatar } from "~~/components/scaffold-eth";
 import { useAutoConnect, useNetworkColor } from "~~/hooks/scaffold-eth";
@@ -34,6 +36,7 @@ export const RainbowKitCustomConnectButton = () => {
         const blockExplorerAddressLink = account
           ? getBlockExplorerAddressLink(getTargetNetwork(), account.address)
           : undefined;
+        const profileLink = account ? "profile/" + account.address : undefined;
 
         return (
           <>
@@ -105,13 +108,22 @@ export const RainbowKitCustomConnectButton = () => {
                       className="dropdown-content menu z-[2] p-2 mt-2 shadow-center shadow-accent bg-base-200 rounded-box gap-1"
                     >
                       <li>
+                        <button className="menu-item btn-sm !rounded-xl flex gap-3 py-3" type="button">
+                          <UserCircleIcon className="h-6 w-4 ml-2 sm:ml-0" />
+                          <Link href={profileLink as any} passHref>
+                            My Profile
+                          </Link>
+                        </button>
+                      </li>
+
+                      <li>
                         {addressCopied ? (
                           <div className="btn-sm !rounded-xl flex gap-3 py-3">
                             <CheckCircleIcon
                               className="text-xl font-normal h-6 w-4 cursor-pointer ml-2 sm:ml-0"
                               aria-hidden="true"
                             />
-                            <span className=" whitespace-nowrap">Copy address</span>
+                            <span className=" whitespace-nowrap">Copy Address</span>
                           </div>
                         ) : (
                           <CopyToClipboard
@@ -128,7 +140,7 @@ export const RainbowKitCustomConnectButton = () => {
                                 className="text-xl font-normal h-6 w-4 cursor-pointer ml-2 sm:ml-0"
                                 aria-hidden="true"
                               />
-                              <span className=" whitespace-nowrap">Copy address</span>
+                              <span className=" whitespace-nowrap">Copy Address</span>
                             </div>
                           </CopyToClipboard>
                         )}
