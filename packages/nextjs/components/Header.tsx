@@ -5,7 +5,10 @@ import { useRouter } from "next/router";
 import {
   Bars3Icon,
   BugAntIcon,
-  MagnifyingGlassIcon, // SparklesIcon
+  ChatBubbleOvalLeftEllipsisIcon,
+  MagnifyingGlassIcon,
+  MapIcon,
+  PuzzlePieceIcon, // SparklesIcon
   RssIcon,
 } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
@@ -53,11 +56,24 @@ export const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink href="/debug">
-          <BugAntIcon className="h-4 w-4" />
-          Debug Contracts
+        <NavLink href="/projects">
+          <PuzzlePieceIcon className="h-4 w-4" />
+          Projects
         </NavLink>
       </li>
+      <li>
+        <NavLink href="/players">
+          <ChatBubbleOvalLeftEllipsisIcon className="h-4 w-4" />
+          Players
+        </NavLink>
+      </li>
+      <li>
+        <NavLink href="/roadmap">
+          <MapIcon className="h-4 w-4" />
+          Roadmap
+        </NavLink>
+      </li>
+
       {/*
       <li>
         <NavLink href="/example-ui">
@@ -66,13 +82,22 @@ export const Header = () => {
         </NavLink>
       </li>
   */}
-      {!process.env.NEXT_PUBLIC_VERCEL_ENV && (
-        <li>
-          <NavLink href="/blockexplorer">
-            <MagnifyingGlassIcon className="h-4 w-4" />
-            Block Explorer
-          </NavLink>
-        </li>
+      {!process.env.NEXT_PUBLIC_VERCEL_ENV && process.env.NEXT_PUBLIC_DEBUG_TOOLS && (
+        <>
+          <li>
+            <NavLink href="/debug">
+              <BugAntIcon className="h-4 w-4" />
+              Debug Contracts
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink href="/blockexplorer">
+              <MagnifyingGlassIcon className="h-4 w-4" />
+              Block Explorer
+            </NavLink>
+          </li>
+        </>
       )}
     </>
   );
