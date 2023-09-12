@@ -6,6 +6,7 @@ import {
   Bars3Icon,
   BugAntIcon,
   ChatBubbleOvalLeftEllipsisIcon,
+  CircleStackIcon,
   HeartIcon,
   MagnifyingGlassIcon,
   MapIcon,
@@ -58,7 +59,7 @@ export const Header = () => {
       </li>
       <li>
         <NavLink href="/streams">
-          <RssIcon className="h-4 w-4" />
+          <CircleStackIcon className="h-4 w-4" />
           Streams
         </NavLink>
       </li>
@@ -69,9 +70,9 @@ export const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink href="/discussion">
+        <NavLink href="/discussions">
           <ChatBubbleOvalLeftEllipsisIcon className="h-4 w-4" />
-          Discussion
+          Discussions
         </NavLink>
       </li>
       <li>

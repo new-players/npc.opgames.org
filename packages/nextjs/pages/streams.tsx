@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 // import { BigNumber } from "ethers";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
@@ -71,19 +72,21 @@ const Home: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10 mb-20 mx-auto font-grotesk gap-5">
         <h1 className="font-bold text-4xl pb-8 visible md:hidden">Your Hacker House</h1>
         <div className="max-w-[42rem] m-auto w-[90%] bg-secondary px-8 py-4 rounded-2xl">
-          <p className="font-bold text-left text-4xl leading-6 py-2">Welcome!</p>
+          <p className="font-bold text-left text-4xl leading-6 py-2">Streams</p>
           <p>
-            We are a group of builders, artists and dreamers using <strong>ERC-6551 and AI</strong>. Our mission is to
-            build a better world with the new players in the game of life.
+            To support members of the cooperative, we have implemented a fork of the{" "}
+            <Link href="https://app.buidlguidl.com/" passHref className="link">
+              BuidlGuidl Streams Contract.
+            </Link>{" "}
           </p>
           <p>
-            This forkable project aims to provide a platform to retroactively fund open-source work by providing a
-            monthly UBI to handpicked open-source developers, rewarding them for their ongoing contributions.
+            This gives us a platform to retroactively fund open-source work by providing a monthly UBI to active
+            members, rewarding them for their ongoing contributions.
           </p>
         </div>
 
         <div className="max-w-[42rem] m-auto w-[90%] bg-secondary rounded-2xl">
-          <h2 className="font-bold text-2xl px-8 py-4 border-b-2">Hacker ETH Streams</h2>
+          <h2 className="font-bold text-2xl px-8 py-4 border-b-2">Members</h2>
           <div>
             <HackerStreams
               allBuildersData={allBuildersData as any}

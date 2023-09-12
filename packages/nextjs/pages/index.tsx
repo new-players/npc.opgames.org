@@ -2,9 +2,12 @@ import Link from "next/link";
 import type { NextPage } from "next";
 import {
   // BugAntIcon,
+  CircleStackIcon,
+  HeartIcon,
   MagnifyingGlassIcon,
   RssIcon,
   SparklesIcon,
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { MetaHeader } from "~~/components/MetaHeader";
 
@@ -18,6 +21,19 @@ const Home: NextPage = () => {
             <span className="block text-2xl mb-2">Welcome to the</span>
             <span className="block text-4xl font-bold">New Players Cooperative</span>
           </h1>
+          <div className="max-w-[42rem] m-auto w-[100%] bg-secondary px-8 py-4 rounded-2xl">
+            <p>
+              We are a group of builders, artists and dreamers using <strong>ERC-6551 and AI</strong> to create more
+              playful futures.
+            </p>
+            <p>
+              The future of games is <u>already</u> non-playable characters (NPCs) with AI. As our new AI friends start
+              joining the servers, what kinds of games should we be building?
+            </p>
+            <p>
+              Read <strong>The New Players</strong> brief to learn more 👇
+            </p>
+          </div>
           {/*
           <p className="text-center text-lg">
             Get started by editing{" "}
@@ -50,13 +66,13 @@ const Home: NextPage = () => {
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
             <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <RssIcon className="h-8 w-8 fill-secondary" />
+              <CircleStackIcon className="h-8 w-8 fill-secondary" />
               <p>
-                We retroactively fund NPC builders with Ethereum{" "}
+                Members of the cooperative are funded via{" "}
                 <Link href="/streams" passHref className="link">
                   Streams
                 </Link>
-                .
+                , a new way to fund open source projects.
               </p>
 
               {/*
@@ -71,23 +87,31 @@ const Home: NextPage = () => {
         */}
             </div>
             <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <SparklesIcon className="h-8 w-8 fill-secondary" />
+              <UserGroupIcon className="h-8 w-8 fill-secondary" />
               <p>
-                Experiment with{" "}
-                <Link href="/example-ui" passHref className="link">
-                  Example UI
+                We believe in playing and building games in co-op mode.<br></br>
+                <br></br>
+                <Link href="/projects" passHref className="link">
+                  Projects
                 </Link>{" "}
-                to build your own UI.
+                are open-sourced, and members imagine the future together on the{" "}
+                <Link href="/roadmap" passHref className="link">
+                  Roadmap
+                </Link>{" "}
+                and on public{" "}
+                <Link href="/discussions" passHref className="link">
+                  Discussions.
+                </Link>
               </p>
             </div>
             <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
+              <HeartIcon className="h-8 w-8 fill-secondary" />
               <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
+                We are building the future of play with an awesome group of{" "}
+                <Link href="/supporters" passHref className="link">
+                  Supporters,
                 </Link>{" "}
-                tab.
+                companies and individuals who believe in our mission.
               </p>
             </div>
           </div>
