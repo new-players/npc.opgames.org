@@ -56,7 +56,6 @@ export const Footer = () => {
                 </a>
               </p>
             </div>
-            <span>·</span>
             {/*
             <div className="text-center">
               <a
