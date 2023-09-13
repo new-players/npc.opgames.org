@@ -1,5 +1,5 @@
 import cn from 'clsx';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import ReactFlow, {
   MiniMap,
   Controls,
@@ -14,6 +14,7 @@ import StackNode from './StackNode';
 import 'reactflow/dist/style.css';
 import styles from './style.module.css'
 import dynamic from "next/dynamic";
+import { useLoadJson } from "~~/hooks/scaffold-eth";
 
 const nodeTypes = {
   stack: StackNode
@@ -117,6 +118,7 @@ export function Gameboard() {
 
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
   const proOptions = { hideAttribution: true };
+  const { canvasNodes, canvasEdges, loading } = useLoadJson('/roadmap.json');
 
   const updateReactFlow = async (e) => {
     // const address = e.updated_src.address;
@@ -129,26 +131,32 @@ export function Gameboard() {
     console.log(rfInstance)
   }
 
+  if (loading) return 
+  (
+    <div>Loading...</div>
+  )
+
   return (
     <GameWindow
     >
       <ReactFlow
-        nodes={nodes}
-        edges={edges}
+        nodes={canvasNodes}
+        edges={canvasEdges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         onInit={setRfInstance}
         nodeTypes={nodeTypes}
         proOptions={proOptions}
+        fitView
       >
-        <MiniMap position={"bottom-left"} zoomable pannable/>
+        <MiniMap position={"bottom-right"} zoomable pannable/>
         <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
       </ReactFlow>
-
-      <ReactJson src={nodes} theme="hopscotch" onEdit={updateReactFlow} enableClipboard={true}/>
-
-
+    {/*
+      
+      <ReactJson src={canvasNodes} theme="hopscotch" onEdit={updateReactFlow} enableClipboard={true}/>
+  */}
     </GameWindow>
   );
 }
