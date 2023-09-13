@@ -15,7 +15,7 @@ const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT
 
 export const MetaHeader = ({
   title = "New Players Cooperative",
-  description = "Built with 🏗 Scaffold-ETH 2",
+  description = "Building the future of games with ERC-6551 and AI",
   image = "thumbnail.jpg",
   twitterCard = "summary_large_image",
   children,
