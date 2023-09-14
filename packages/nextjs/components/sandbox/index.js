@@ -118,7 +118,7 @@ export function Gameboard() {
 
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
   const proOptions = { hideAttribution: true };
-  const { canvasNodes, canvasEdges, loading } = useLoadJson('/roadmap.json');
+  const { canvasNodes, canvasEdges, loading } = useLoadJson('/roadmap.canvas');
 
   const updateReactFlow = async (e) => {
     // const address = e.updated_src.address;
