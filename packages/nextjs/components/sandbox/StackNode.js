@@ -7,11 +7,11 @@ import Handle from './Handle';
 import { Position } from 'reactflow';
 
 export default function StackNode({ data }) {
-  const { label = '', image='', emoji='' } = data;
+  const { label = '', image='', emoji='', width=100, height=100 } = data;
 
   return (
     <Wrapper label={label}>
-      <Box height="100%" width="100%">
+      <Box height={height} width={width}>
         {image ? 
 
           <Image src={image} width={100} height={100} alt=""/> :

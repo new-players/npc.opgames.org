@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Position } from "reactflow";
 
 /**
  * useLoadJSON hook
@@ -21,10 +22,19 @@ export const useLoadJson = (filePath: string) => {
       },
       data: {
         label: node.text,
+      },
+      style: {
         width: node.width,
         height: node.height,
+        "font-size": 20,
       },
+      ...nodeDefaults,
     }));
+  };
+
+  const nodeDefaults = {
+    sourcePosition: Position.Right,
+    targetPosition: Position.Left,
   };
 
   const convertEdges = (edges: any) => {
