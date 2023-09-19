@@ -15,14 +15,25 @@
               "state": {
                 "file": "roadmap.canvas",
                 "viewState": {
-                  "x": 18.017626801305596,
-                  "y": -142.94163327461175,
-                  "zoom": -1.3168272231944973
+                  "x": -37.4003961266111,
+                  "y": 179.1654169641203,
+                  "zoom": -0.6501605565278308
                 }
               }
             }
+          },
+          {
+            "id": "f681d5ebe7cd6c27",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.13"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -72,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 212.5
   },
   "right": {
     "id": "464925e0c34bd70c",
@@ -149,11 +160,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d3f934b91e99b674",
+  "active": "f681d5ebe7cd6c27",
   "lastOpenFiles": [
+    "favicon.png",
+    "favicon-32x32.png",
+    "logo2.svg",
+    "logo.jpeg",
+    "ideogram.jpeg",
     "thumbnail.jpg",
     "roadmap.canvas",
-    "favicon.png",
+    "roadmap.json",
     "logo.svg"
   ]
 }

@@ -50,7 +50,7 @@ const Home: NextPage = () => {
 
   const amIAStreamedBuilder = allBuildersData?.some(builderData => builderData.builderAddress === address);
 
-  console.log(builderList);
+  // console.log(builderList);
 
   return (
     <>
