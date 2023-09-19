@@ -53,27 +53,33 @@ const Projects: NextPage = () => {
     <div className="flex items-center flex-col flex-grow pt-10">
       <div className="px-5 w-full">
         <h1 className="text-center mb-8 text-4xl font-bold">Example Projects (None of these are in progress)</h1>
-        <div className="grid grid-cols-3 gap-4">
-          {projects.map(project => (
-            <div key={project.id} className="bg-white p-4 shadow rounded">
+
+        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
+          <div className="flex justify-center items-center gap-12 flex-col md:flex-row">
+            {projects.map(project => (
               <div
-                style={{ backgroundColor: project.bannerBackgroundColor }}
-                className="w-full h-48 flex items-center justify-center text-white rounded-t text-2xl"
+                key={project.id}
+                className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-xl"
               >
-                {project.name}
+                <div
+                  style={{ backgroundColor: project.bannerBackgroundColor }}
+                  className="w-full h-48 flex items-center justify-center text-white rounded-t text-2xl rounded-xl"
+                >
+                  {project.name}
+                </div>
+                <p>{project.description}</p>
+                <div className="flex justify-center items-center mt-4 space-x-2">
+                  {project.users.map((user, index) => (
+                    <div key={index} className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                      <Link href={"/profile/" + user} passHref>
+                        <BlockieAvatar address={user} size={24} ensImage={null} />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p>{project.description}</p>
-              <div className="flex justify-center items-center mt-4 space-x-2">
-                {project.users.map((user, index) => (
-                  <div key={index} className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                    <Link href={"/profile/" + user} passHref>
-                      <BlockieAvatar address={user} size={24} ensImage={null} />
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

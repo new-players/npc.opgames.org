@@ -48,7 +48,9 @@ const Home: NextPage = () => {
     }
   }, [addBuilderEvents]);
 
-  const amIAStreamedBuilder = allBuildersData?.some(builderData => builderData.builderAddress === address);
+  const amIAStreamedBuilder = allBuildersData?.some(
+    (builderData: { builderAddress: string | undefined }) => builderData.builderAddress === address,
+  );
 
   // console.log(builderList);
 
