@@ -77,7 +77,7 @@ const Home: NextPage = () => {
           <p className="font-bold text-left text-4xl leading-6 py-2">Streams</p>
           <p>
             To support members of the cooperative, we have implemented a fork of the{" "}
-            <Link href="https://app.buidlguidl.com/" passHref className="link">
+            <Link href="https://github.com/BuidlGuidl/hacker-houses-streams" passHref className="link">
               BuidlGuidl Streams Contract.
             </Link>{" "}
           </p>

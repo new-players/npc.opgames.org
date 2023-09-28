@@ -16,11 +16,22 @@ import {
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+const NavLink = ({ newTab, href, children }: { newTab: boolean; href: string; children: React.ReactNode }) => {
   const router = useRouter();
   const isActive = router.pathname === href;
 
-  return (
+  return newTab ? (
+    <Link
+      target="_blank"
+      href={href}
+      passHref
+      className={`${
+        isActive ? "bg-secondary shadow-md" : ""
+      } hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col`}
+    >
+      {children}
+    </Link>
+  ) : (
     <Link
       href={href}
       passHref
@@ -52,31 +63,31 @@ export const Header = () => {
       </li>
   */}
       <li>
-        <NavLink href="/roadmap">
+        <NavLink newTab={false} href="/roadmap">
           <MapIcon className="h-4 w-4" />
           Roadmap
         </NavLink>
       </li>
       <li>
-        <NavLink href="/streams">
+        <NavLink newTab={false} href="/streams">
           <CircleStackIcon className="h-4 w-4" />
           Streams
         </NavLink>
       </li>
       <li>
-        <NavLink href="/projects">
+        <NavLink newTab={false} href="/projects">
           <PuzzlePieceIcon className="h-4 w-4" />
           Projects
         </NavLink>
       </li>
       <li>
-        <NavLink href="https://github.com/orgs/new-players/discussions">
+        <NavLink newTab={true} href="https://github.com/orgs/new-players/discussions">
           <ChatBubbleOvalLeftEllipsisIcon className="h-4 w-4" />
           Discussions
         </NavLink>
       </li>
       <li>
-        <NavLink href="/supporters">
+        <NavLink newTab={false} href="/supporters">
           <HeartIcon className="h-4 w-4" />
           Supporters
         </NavLink>
@@ -93,14 +104,14 @@ export const Header = () => {
       {!process.env.NEXT_PUBLIC_VERCEL_ENV && process.env.NEXT_PUBLIC_DEBUG_TOOLS && (
         <>
           <li>
-            <NavLink href="/debug">
+            <NavLink newTab={false} href="/debug">
               <BugAntIcon className="h-4 w-4" />
               Debug Contracts
             </NavLink>
           </li>
 
           <li>
-            <NavLink href="/blockexplorer">
+            <NavLink newTab={false} href="/blockexplorer">
               <MagnifyingGlassIcon className="h-4 w-4" />
               Block Explorer
             </NavLink>
